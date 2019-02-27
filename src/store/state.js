@@ -1,5 +1,8 @@
 let state = {
-    bLoading:false
+    bLoading:false,
+    carNum:0,
+    bNav:true,
+    carList:[]
 }
 
 export default state;

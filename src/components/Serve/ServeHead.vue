@@ -4,7 +4,7 @@
       <i></i>
     </a>
     <!--<h1>首页</h1>-->
-    <input type="search" placeholder="请输入服务项目">
+    <input type="search" placeholder="请输入服务项目" v-model="search" @change="search_key(search)">
     <i class="icon iconfont icon-sousuo sr"></i>
     <a href="#" class="right_btn">确定</a>
   </div>
@@ -12,3 +12,13 @@
 <style lang="scss">
     .sr{font-size: 20px;}
 </style>
+<script>
+export default {
+  props:['search_key'],
+  data() {
+    return {
+      search:''
+    }
+  }
+}
+</script>

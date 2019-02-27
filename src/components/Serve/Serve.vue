@@ -1,7 +1,7 @@
 <template>
     <div>
-        <ServeHead></ServeHead>
-        <ServeList :serve_list_data='serve_list_data'></ServeList>
+        <ServeHead :search_key='search_key'></ServeHead>
+        <ServeList :serve_list_data='serve_list_data' :str='str'></ServeList>
     </div>
 </template>
 <script>
@@ -10,7 +10,8 @@ import ServeList from './ServeList';
 export default {
     data() {
         return {
-            serve_list_data:[]
+            serve_list_data:[],
+            str:'洗澡'
         }
     },
     components:{
@@ -24,6 +25,11 @@ export default {
                 this.serve_list_data = res.data.data[0].serve;
             }
         )
+    },
+    methods: {
+        search_key(str){
+            this.str = str;
+        }
     },
 }
 </script>

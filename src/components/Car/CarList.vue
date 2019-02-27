@@ -16,50 +16,18 @@
       </ul>
 
       <ul class="gw_list">
-        <li>
-          <a href="prodetail.html">
-            <img src="../../assets/images/pp.png">
+        <li v-for="(item,index) in carList" :key="index">
+          <a>
+            <img :src="item.url">
           </a>
           <div>
-            <h3>商品名称商品</h3>
+            <h3>{{item.title}}</h3>
             <p class="service_time">单价:
-              <span>150元</span>
+              <span>{{item.price}}元</span>
             </p>
             <p class="service_price">数量:
               <input type="button" value="-">
-              <input type="number" value="1" id="num">
-              <input type="button" value="+">
-            </p>
-          </div>
-        </li>
-        <li>
-          <a href="prodetail.html">
-            <img src="../../assets/images/pp.png">
-          </a>
-          <div>
-            <h3>商品名称商品</h3>
-            <p class="service_time">单价:
-              <span>150元</span>
-            </p>
-            <p class="service_price">数量:
-              <input type="button" value="-">
-              <input type="number" value="1" id="num">
-              <input type="button" value="+">
-            </p>
-          </div>
-        </li>
-        <li>
-          <a href="prodetail.html">
-            <img src="../../assets/images/pp.png">
-          </a>
-          <div>
-            <h3>商品名称商品</h3>
-            <p class="service_time">单价:
-              <span>150元</span>
-            </p>
-            <p class="service_price">数量:
-              <input type="button" value="-">
-              <input type="number" value="1" id="num">
+              <input type="number" :value="item.num" id="num">
               <input type="button" value="+">
             </p>
           </div>
@@ -67,3 +35,11 @@
       </ul>
   </div>
 </template>
+<script>
+import {mapGetters} from 'vuex'
+export default {
+  computed:mapGetters(
+    ['carList']
+  ),
+}
+</script>

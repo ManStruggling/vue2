@@ -19,6 +19,6 @@
 </template>
 <script>
 export default {
-  props:['serve_list_data']
+  props:['serve_list_data','str']
 }
 </script>
